@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     
-    <!-- Firebase Libraries -->
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
@@ -176,7 +175,6 @@
 </head>
 <body class="text-slate-900 dark:text-slate-100 p-3 md:p-8 transition-colors duration-500 min-h-screen relative font-sans antialiased selection:bg-pink-500 selection:text-white overflow-x-hidden">
     
-    <!-- Liquid Background Elements -->
     <div class="liquid-bg">
         <div class="blob blob1"></div>
         <div class="blob blob2"></div>
@@ -184,7 +182,14 @@
         <div class="blob blob4"></div>
     </div>
 
-    <!-- iOS Control Center style dark mode toggle -->
+    <a href="https://drive.google.com/file/d/1_lNxxeNmUNXP2nwlWB4Fsa9gd0gs8Fyh/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="fixed top-4 left-4 z-50 px-3 md:px-4 py-2.5 md:py-3 rounded-full glass-button text-slate-800 dark:text-white hover:scale-105 transition-all cursor-pointer backdrop-blur-3xl shadow-md flex items-center gap-1.5 md:gap-2 group no-underline border border-white/60 dark:border-white/20">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-4 h-4 md:w-5 md:h-5 text-[#34c759] dark:text-[#30d158] fill-current group-hover:scale-110 transition-transform">
+            <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/>
+        </svg>
+        <span class="text-[10px] md:text-xs font-black uppercase tracking-widest hidden sm:block">Get App</span>
+        <span class="text-[10px] font-black uppercase tracking-widest sm:hidden">App</span>
+    </a>
+
     <button onclick="toggleDarkMode()" class="fixed top-4 right-4 z-50 p-3 rounded-full glass-button text-slate-800 dark:text-white hover:scale-105 transition-all cursor-pointer backdrop-blur-3xl shadow-md">
         <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 hidden dark:block drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -195,7 +200,6 @@
     </button>
 
     <div class="max-w-4xl mx-auto relative z-10 pt-2 md:pt-4">
-        <!-- Header -->
         <header class="text-center mb-8 md:mb-12 flex flex-col items-center">
             <div class="glass-button rounded-[1.5rem] md:rounded-[2rem] p-2 md:p-3 mb-4 inline-block shadow-lg">
                 <img 
@@ -220,10 +224,8 @@
             </div>
         </header>
 
-        <!-- Main Calendar Container -->
         <div class="glass-panel overflow-hidden mx-1 md:mx-0">
             
-            <!-- Month Navigation Bar -->
             <div class="flex items-center justify-between p-3.5 md:p-8 border-b border-white/40 dark:border-white/10 relative z-20 bg-white/20 dark:bg-white/5">
                 <button onclick="prevMonth()" class="p-2 md:p-3 bg-white/40 dark:bg-black/20 hover:bg-white/60 dark:hover:bg-white/10 rounded-xl md:rounded-full transition-all focus:outline-none group backdrop-blur-md shadow-sm border border-white/50 dark:border-white/10">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-slate-800 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -231,7 +233,6 @@
                     </svg>
                 </button>
                 
-                <!-- Month & Year Selector -->
                 <div class="flex items-center gap-1 md:gap-3">
                     <select id="month-picker" onchange="jumpToDate()" class="bg-transparent hover:bg-white/40 dark:hover:bg-white/10 rounded-xl px-1.5 py-1 md:px-3 md:py-1.5 text-lg md:text-3xl font-black text-slate-900 dark:text-white outline-none cursor-pointer transition-colors text-center drop-shadow-sm">
                         <option value="0" class="text-sm md:text-base text-slate-800 dark:text-slate-800">January</option>
@@ -248,8 +249,7 @@
                         <option value="11" class="text-sm md:text-base text-slate-800 dark:text-slate-800">December</option>
                     </select>
                     <select id="year-picker" onchange="jumpToDate()" class="bg-transparent hover:bg-white/40 dark:hover:bg-white/10 rounded-xl px-1.5 py-1 md:px-3 md:py-1.5 text-lg md:text-3xl font-black text-slate-500 dark:text-slate-400 outline-none cursor-pointer transition-colors text-center drop-shadow-sm">
-                        <!-- JS se saal aayenge -->
-                    </select>
+                        </select>
                 </div>
                 
                 <button onclick="nextMonth()" class="p-2 md:p-3 bg-white/40 dark:bg-black/20 hover:bg-white/60 dark:hover:bg-white/10 rounded-xl md:rounded-full transition-all focus:outline-none group backdrop-blur-md shadow-sm border border-white/50 dark:border-white/10">
@@ -259,27 +259,30 @@
                 </button>
             </div>
 
-            <!-- Single Month Grid Container -->
             <div id="calendar-swipe-zone" class="p-3 md:p-8 relative z-10 touch-pan-y">
-                <!-- Day Headers -->
                 <div class="grid grid-cols-7 text-center text-[0.6rem] md:text-sm font-bold text-slate-500 dark:text-slate-400 mb-3 md:mb-6 uppercase tracking-widest opacity-90">
                     <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div class="text-[#ff9f0a]">Sat</div><div class="text-[#ff9f0a]">Sun</div>
                 </div>
                 
-                <!-- Dates Grid -->
                 <div id="days-grid" class="grid grid-cols-7 gap-1.5 md:gap-4 text-center">
-                    <!-- Din yahan populate honge -->
-                </div>
+                    </div>
             </div>
         </div>
 
-        <div class="mt-8 md:mt-10 flex justify-center">
+        <div class="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
             <button onclick="goToToday()" class="glass-button px-6 py-3 md:px-8 md:py-4 bg-white/70 dark:bg-black/40 hover:bg-white dark:hover:bg-white/20 text-slate-900 dark:text-white rounded-full font-black text-xs md:text-sm hover:scale-105 transition-all flex items-center gap-2 shadow-lg backdrop-blur-2xl">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 Return to Today
             </button>
+            
+            <a href="https://drive.google.com/file/d/1_lNxxeNmUNXP2nwlWB4Fsa9gd0gs8Fyh/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="glass-button px-6 py-3 md:px-8 md:py-4 bg-white/70 dark:bg-black/40 hover:bg-white dark:hover:bg-white/20 text-slate-900 dark:text-white rounded-full font-black text-xs md:text-sm hover:scale-105 transition-all flex items-center gap-2 shadow-lg backdrop-blur-2xl border border-[#34c759]/30">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="h-4 w-4 md:h-5 md:w-5 text-[#34c759] dark:text-[#30d158] fill-current">
+                    <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/>
+                </svg>
+                Download App
+            </a>
         </div>
 
         <footer class="mt-14 md:mt-20 mb-8 text-center pt-6 md:pt-8">
@@ -289,10 +292,8 @@
         </footer>
     </div>
 
-    <!-- Modal Backdrop -->
     <div id="modal-backdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-2xl hidden z-[60] transition-opacity duration-500" onclick="closeModal()"></div>
 
-    <!-- iOS 18 Style Modal Content -->
     <div id="modal-content" class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[94%] max-w-md glass-panel rounded-[2rem] md:rounded-[2.5rem] shadow-[0_40px_80px_rgba(0,0,0,0.4)] z-[70] hidden transition-all duration-500 p-0 overflow-hidden border border-white/60 dark:border-white/20">
         <div id="modal-header" class="p-6 md:p-8 text-slate-900 dark:text-white transition-colors duration-300 relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-b from-white/60 to-transparent dark:from-white/10 dark:to-transparent pointer-events-none"></div>
@@ -317,13 +318,11 @@
         
         <div class="p-5 md:p-8 max-h-[65vh] overflow-y-auto bg-white/30 dark:bg-black/20 backdrop-blur-md">
             
-            <!-- Holiday Desc -->
             <div id="holiday-section" class="mb-5 md:mb-7 hidden bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-4 md:p-5 rounded-2xl md:rounded-[1.5rem] border border-white/50 dark:border-white/10 shadow-sm">
                 <h3 class="text-[9px] md:text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-1.5 md:mb-2">Event Details</h3>
                 <p id="modal-desc" class="text-slate-900 dark:text-slate-100 leading-relaxed text-xs md:text-sm font-semibold"></p>
             </div>
 
-            <!-- Internet Live Data & Panchang Section -->
             <div id="internet-data-section" class="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-4 md:p-5 rounded-2xl md:rounded-[1.5rem] border border-white/50 dark:border-white/10 shadow-sm mb-5 md:mb-7">
                 <h3 class="text-[9px] md:text-[10px] font-black text-[#5e5ce6] uppercase tracking-widest mb-3 md:mb-4 flex items-center gap-1.5 md:gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 md:h-4 md:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -367,7 +366,6 @@
                 </div>
             </div>
 
-            <!-- PUBLIC Firebase Cloud Notes Section -->
             <div class="bg-white/60 dark:bg-slate-800/60 backdrop-blur-xl p-4 md:p-5 rounded-2xl md:rounded-[1.5rem] border border-white/50 dark:border-white/10 shadow-sm">
                 <h3 class="text-[9px] md:text-[10px] font-black text-[#ff2a85] dark:text-[#ff375f] uppercase tracking-widest mb-3 md:mb-4 flex items-center gap-1.5 md:gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 md:h-4 md:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -389,7 +387,6 @@
                 </div>
             </div>
 
-            <!-- ADMIN HOLIDAY EDITOR -->
             <div id="admin-holiday-editor" class="mt-5 md:mt-7 p-4 md:p-5 bg-[#ff3b30]/10 dark:bg-[#ff3b30]/20 border border-[#ff3b30]/30 rounded-2xl md:rounded-[1.5rem] hidden backdrop-blur-xl">
                 <h3 class="text-[9px] md:text-[10px] font-black text-[#d70015] dark:text-[#ff6961] uppercase tracking-widest mb-3 md:mb-4 flex items-center gap-1.5 md:gap-2">
                     👑 Admin Event Editor
@@ -413,7 +410,6 @@
         </div>
     </div>
 
-    <!-- Profile Modal Content -->
     <div id="profile-modal" class="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] max-w-sm glass-panel rounded-[2rem] md:rounded-[2.5rem] shadow-[0_50px_100px_rgba(0,0,0,0.5)] z-[70] hidden transition-all duration-500 p-6 md:p-8 flex flex-col items-center text-center border border-white/60 dark:border-white/20">
         <button onclick="closeModal()" class="absolute top-4 right-4 md:top-6 md:right-6 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors bg-white/40 dark:bg-black/20 hover:bg-white/60 rounded-full p-2 border border-white/50 dark:border-white/10 shadow-sm backdrop-blur-xl">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -435,14 +431,11 @@
             Follow on Instagram
         </a>
 
-        <!-- Admin panel is accessible via Calendar on 3rd July every year -->
         <div id="admin-panel-container" class="w-full mt-6 pt-6 md:mt-8 md:pt-8 border-t border-slate-300/30 dark:border-slate-700/30 hidden">
-            <!-- Populated via JS -->
-        </div>
+            </div>
 
     </div>
 
-    <!-- Image Expander Modal -->
     <div id="expanded-image-container" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 md:p-8" onclick="closeImageExpander()">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-3xl"></div>
         <div class="relative max-w-2xl w-full flex flex-col items-center">
